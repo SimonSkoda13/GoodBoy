@@ -2,6 +2,20 @@ import { PayloadAction } from "@reduxjs/toolkit";
 import { DonateType, FormData } from "./formtypes";
 
 export const setFormActions = {
+  setGdpr: (state: FormData, action: PayloadAction<boolean>) => {
+    state.gdpr = action.payload;
+  },
+
+  nextFormNumber: (state: FormData) => {
+    state.formNumber += 1;
+  },
+  prevFormNumber: (state: FormData) => {
+    if (state.formNumber > 1) state.formNumber -= 1;
+  },
+
+  setDone(state: FormData, action: PayloadAction<boolean>) {
+    state.done = action.payload;
+  },
   setOption: (state: FormData, action: PayloadAction<DonateType>) => {
     state.option = action.payload;
   },
@@ -67,19 +81,5 @@ export const setFormActions = {
     if (number.length != 13 || !/^\+[0-9]+$/.test(number)) {
       state.phoneError = "Zmeniť telefónne číslo.";
     }
-  },
-  setGdpr: (state: FormData, action: PayloadAction<boolean>) => {
-    state.gdpr = action.payload;
-  },
-
-  nextStep: (state: FormData) => {
-    state.formNumber += 1;
-  },
-  prevStep: (state: FormData) => {
-    if (state.formNumber > 1) state.formNumber -= 1;
-  },
-
-  setDone(state: FormData, action: PayloadAction<boolean>) {
-    state.done = action.payload;
   },
 };

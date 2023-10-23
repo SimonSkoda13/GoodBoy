@@ -8,9 +8,12 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      "primary.900": "#CD8A64",
-      "primary.800": "#C4794F",
+      "primary-900": "#CD8A64",
+      "primary-800": "#C4794F",
+      "primary-500": "#F3E2D9",
+      "primary-300": "#FAF9F9",
       greyText: "#9F9F9F",
+      white: "#FFFFFF",
     },
   },
   plugins: [],
