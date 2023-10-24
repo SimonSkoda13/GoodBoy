@@ -3,6 +3,7 @@ import { DonateType, FormData } from "@/state/formtypes";
 import { Button } from "@/components/Button";
 import { nextFormNumber } from "@/state/reducers";
 import { Option } from "../Option";
+import { Selector } from "../Selector";
 
 export const Form1 = (formValues: FormData) => {
   const { option, shelter } = formValues;
@@ -12,6 +13,11 @@ export const Form1 = (formValues: FormData) => {
         Vyberte si možnosť, ako chcete pomôcť
       </h2>
       <Option />
+      <Selector
+        label="Útulok"
+        required={option === DonateType.one ? true : false}
+        value={shelter}
+      />
       <div className="flex justify-end">
         <Button
           label="Pokračovať"
