@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     <ServicesProvider>
       <section className="relative grid grid-cols-2 w-full md:grid-cols-3 gap-6  py-9 md:py-20">
         <Form />
-        <div className="col-span-1 relative w-full h-[80vh]">
+        <div className="col-span-1 relative w-full h-[80vh] hidden md:block">
           <Image
             src="/dog.png"
             alt="Dog photo"

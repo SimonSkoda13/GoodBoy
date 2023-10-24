@@ -8,7 +8,7 @@ export const Option = () => {
   const option = useFormSelector((state) => state.form.option);
 
   return (
-    <div className="flex flex-row w-full">
+    <div className="flex flex-row w-full rounded-lg">
       <div
         className={
           "flex flex-col content-between w-[50%] p-8 bg-primary-300 border-solid border-2 border-primary-900 " +
@@ -75,9 +75,7 @@ export const Option = () => {
         <p
           id="desc1"
           className={
-            option === DonateType.one
-              ? "w-[200px] mt-5 text-white"
-              : "w-[200px] mt-5 text-black"
+            option === DonateType.one ? "mt-5 text-white" : "mt-5 text-black"
           }
         >
           Chcem finančne prispieť konkrétnemu útulku
@@ -128,9 +126,7 @@ export const Option = () => {
         <p
           id="desc2"
           className={
-            option === DonateType.whole
-              ? "w-[200px] mt-5 text-white"
-              : "w-[200px] mt-5 text-black"
+            option === DonateType.whole ? "mt-5 text-white" : "mt-5 text-black"
           }
         >
           Chcem finančne prispieť celej nadácii

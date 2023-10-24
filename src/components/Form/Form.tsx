@@ -8,13 +8,15 @@ export const Form = () => {
   const formValues = useFormSelector((state) => state.form);
   const dispatch = useFormDispatch();
   const [formNode, setFormNode] = useState<ReactNode>(
-    <Form1 {...formValues} />
+    <Form1 option={formValues.option} shelter={formValues.shelter} />
   );
 
   useEffect(() => {
     switch (formValues.formNumber) {
       case 1:
-        setFormNode(<Form1 {...formValues} />);
+        setFormNode(
+          <Form1 option={formValues.option} shelter={formValues.shelter} />
+        );
         break;
       default:
         break;
@@ -28,6 +30,7 @@ export const Form = () => {
     <div className="col-span-2">
       <FormNumber />
       {formNode}
+      {/* {JSON.stringify(formValues)} */}
     </div>
   );
 };

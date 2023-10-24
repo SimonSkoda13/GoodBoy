@@ -14,6 +14,7 @@ const config: Config = {
       "primary-300": "#FAF9F9",
       greyText: "#9F9F9F",
       white: "#FFFFFF",
+      black: "#000000",
     },
   },
   plugins: [],

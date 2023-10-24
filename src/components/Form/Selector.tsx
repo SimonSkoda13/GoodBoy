@@ -1,3 +1,4 @@
+import { useFormDispatch } from "@/app/page";
 import { setShelter } from "@/state/reducers";
 import React, { createRef, useEffect, useState } from "react";
 
@@ -8,10 +9,12 @@ export interface SelectorProps {
 }
 
 export const Selector = (props: SelectorProps) => {
-  const { label, required, value } = props;
+  const { label } = props;
   const dropButton = createRef<HTMLButtonElement>();
+  const setNewShelter = () => {};
   const [shelterList, setShelterList] =
     useState<{ id: number; name: string }[]>();
+  const dispatch = useFormDispatch();
   useEffect(() => {
     fetch("https://frontend-assignment-api.goodrequest.dev/api/v1/shelters")
       .then(async (response) => {
@@ -63,7 +66,7 @@ export const Selector = (props: SelectorProps) => {
           dropButton.current?.classList.remove("transform-[rotate(180deg)]")
         }
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-          setShelter(Number(e.target.value));
+          dispatch(setShelter(Number(e.target.value)));
           dropButton.current?.classList.remove("transform-[rotate(180deg)]");
         }}
         onBlur={() =>
