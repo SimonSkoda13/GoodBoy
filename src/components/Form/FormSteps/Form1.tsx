@@ -7,13 +7,7 @@ import { Selector } from "../Selector";
 import { useFormSelector } from "@/app/page";
 import { AmountSelector, AmountType } from "../AmountSelector";
 
-export interface Form1Props {
-  option: DonateType;
-  shelter?: number;
-}
-
-export const Form1 = (props: Form1Props) => {
-  //   const { option, shelter } = props;
+export const Form1 = () => {
   const option = useFormSelector((state) => state.form.option);
   const amount = useFormSelector((state) => state.form.amount);
   const shelter = useFormSelector((state) => state.form.shelter);
