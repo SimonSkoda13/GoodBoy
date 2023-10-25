@@ -1,8 +1,8 @@
 export const AmountOptions = [5, 10, 20, 30, 50, 100];
 
 export enum DonateType {
-  "generic" = "Chcem finančne prispieť celej nadácii",
-  "specific" = "Chcem finančne prispieť konkrétnemu útulku",
+  "whole" = "Chcem finančne prispieť celej nadácii",
+  "one" = "Chcem finančne prispieť konkrétnemu útulku",
 }
 
 export interface FormData {

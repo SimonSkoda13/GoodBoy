@@ -17,9 +17,9 @@ export const useFormSelector: TypedUseSelectorHook<RootState> = useSelector;
 const Home: React.FC = () => {
   return (
     <ServicesProvider>
-      <section className="relative grid grid-cols-2 w-full md:grid-cols-3 gap-6  py-7 md:py-10">
+      <section className="relative grid grid-cols-2 w-full md:grid-cols-3 gap-6  py-9 md:py-20">
         <Form />
-        <div className="col-span-1 relative w-full h-[80vh]">
+        <div className="col-span-1 relative w-full h-[80vh] hidden md:block">
           <Image
             src="/dog.png"
             alt="Dog photo"
