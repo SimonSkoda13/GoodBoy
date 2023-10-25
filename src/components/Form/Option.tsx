@@ -8,13 +8,12 @@ export const Option = () => {
   const option = useFormSelector((state) => state.form.option);
 
   return (
-    <div className="flex flex-row w-full rounded-lg cursor-pointer">
+    <div className="flex flex-row w-full rounded-lg cursor-pointer font-bold">
       <div
         className={
-          "flex flex-col content-between w-[50%] p-8 bg-primary-300 rounded-l-xl border-solid border border-primary-900 " +
-          (option === DonateType.one
-            ? "border-none bg-gradient-to-b from-primary-800 to-primary-800 shadow-xl"
-            : "")
+          "flex flex-col content-between w-[50%] p-8 bg-primary-300 rounded-l-3xl border-solid border border-primary-900 " +
+          (option === DonateType.one &&
+            "border-none bg-gradient-to-b from-primary-800 to-primary-800 shadow-xl")
         }
         onClick={() => dispatch(setOption(DonateType.one))}
       >
@@ -83,11 +82,10 @@ export const Option = () => {
       </div>
       <div
         className={
-          "flex flex-col content-between w-[50%] p-8 bg-primary-300 rounded-r-xl border-solid border border-primary-900 first:rounded-[24px 0 0 24px] last:rounded-[0 24px 24px 0]" +
+          "flex flex-col content-between w-[50%] p-8 bg-primary-300 rounded-r-3xl border-solid border border-primary-900" +
           " " +
-          (option === DonateType.whole
-            ? "border-none bg-gradient-to-b from-primary-800 to-primary-800 shadow-xl"
-            : "")
+          (option === DonateType.whole &&
+            "border-none bg-gradient-to-b from-primary-800 to-primary-800 shadow-xl")
         }
         onClick={() => dispatch(setOption(DonateType.whole))}
       >

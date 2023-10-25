@@ -4,22 +4,17 @@ import { Button } from "@/components/Button";
 import { nextFormNumber } from "@/state/reducers";
 import { Option } from "../Option";
 import { Selector } from "../Selector";
-import { useFormSelector } from "@/app/page";
+import { useFormDispatch, useFormSelector } from "@/app/page";
 import { AmountSelector, AmountType } from "../AmountSelector";
 
-export interface Form1Props {
-  option: DonateType;
-  shelter?: number;
-}
-
-export const Form1 = (props: Form1Props) => {
-  //   const { option, shelter } = props;
+export const Form1 = () => {
+  const dispatch = useFormDispatch();
   const option = useFormSelector((state) => state.form.option);
   const amount = useFormSelector((state) => state.form.amount);
   const shelter = useFormSelector((state) => state.form.shelter);
 
   return (
-    <form className="flex flex-col gap-11 overflow-auto">
+    <div className="flex flex-col gap-11 overflow-auto font-800">
       <h2 className="font-semibold text-3xl leading-tight md:text-5xl">
         Vyberte si možnosť, ako chcete pomôcť
       </h2>
@@ -29,8 +24,7 @@ export const Form1 = (props: Form1Props) => {
           <h3 className="font-md font-semibold mr-auto">O projekte</h3>
           <h3
             className={
-              "font-md font-semibold " +
-              (option === DonateType.one ? "hidden" : "")
+              "font-md font-semibold " + (option === DonateType.one && "hidden")
             }
           >
             Nepovinné
@@ -62,14 +56,15 @@ export const Form1 = (props: Form1Props) => {
           <Button
             label="Pokračovať"
             disabled={
-              option === DonateType.one && shelter == undefined && amount <= 0
+              (option === DonateType.one && shelter == undefined) || amount <= 0
             }
             onClick={() => {
-              nextFormNumber();
+              console.log("clicked");
+              dispatch(nextFormNumber());
             }}
           />
         </div>
       </div>
-    </form>
+    </div>
   );
 };
