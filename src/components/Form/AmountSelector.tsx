@@ -19,11 +19,11 @@ export const AmountSelector = (props: AmountSelectorProps) => {
   const formAmount = useFormSelector((state) => state.form.amount);
   let isCustomAmount = !AmountOptions.includes(formAmount as number);
 
-  if (props.type === AmountType.basic && amount !== undefined) {
+  if (type === AmountType.basic && amount !== undefined) {
     return (
       <div
         className={
-          "flex flex-row content-center items-center mx-2 p-4 bg-white text-dark border border-dark hover:bg-primary-900 transition ease-in-out cursor-pointer rounded-md" +
+          "flex flex-row content-center items-center mx-2 p-4 bg-white text-dark border-[0.5px] border-dark hover:bg-primary-900 transition ease-in-out cursor-pointer rounded-md" +
           (amount === formAmount
             ? "border-none bg-gradient-to-r from-primary-900 to-primary-800 rounded-md border-0"
             : "")
@@ -35,7 +35,7 @@ export const AmountSelector = (props: AmountSelectorProps) => {
     );
   }
   return (
-    <div className="flex flex-row content-center items-center mx-2 p-4 bg-white text-dark border border-dark transition ease-in-out cursor-pointer rounded-md">
+    <div className="flex flex-row content-center items-center mx-2 p-4 bg-white text-dark border-[0.5px] border-dark transition ease-in-out cursor-pointer rounded-md">
       <input
         className={
           "px-2 py-1 w-[4rem] focus:outline-none focus:ring focus:border-primary-900 font-800 font-medium leading-[138%] mr-2" +
