@@ -9,7 +9,6 @@ export interface FormData {
   // general
   gdpr: boolean;
   formNumber: number;
-  done: boolean;
   // first
   shelter?: number;
   option: DonateType;

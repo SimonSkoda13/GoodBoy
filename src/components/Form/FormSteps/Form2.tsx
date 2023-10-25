@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 import { Button } from "@/components/Button";
 import {
   nextFormNumber,
@@ -11,11 +11,13 @@ import {
 import { useFormDispatch, useFormSelector } from "@/app/page";
 import { Label } from "@/components/Label";
 import { IInput } from "../Input";
+import { FormLayout } from "../FormLayout";
 
 export const Form2 = () => {
   const dispatch = useFormDispatch();
 
   const name = useFormSelector((state) => state.form.name);
+  const nameRef = createRef<HTMLInputElement>();
   const email = useFormSelector((state) => state.form.email);
   const phone = useFormSelector((state) => state.form.phone);
   const secondName = useFormSelector((state) => state.form.secondName);
@@ -27,13 +29,11 @@ export const Form2 = () => {
   const phoneValidated = useFormSelector((state) => state.form.phoneError);
 
   return (
-    <div className="flex flex-col gap-11 overflow-auto">
-      <h2 className="font-semibold text-3xl leading-tight md:text-5xl">
-        Potrebujeme od Vás zopár informácií
-      </h2>
+    <FormLayout heading="Potrebujeme od Vás zopár informácií">
       <div className="flex flex-col gap-3">
         <Label className="mb-2">O vás</Label>
         <IInput
+          value={name}
           type="name"
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             dispatch(setName(event.target.value));
@@ -41,6 +41,7 @@ export const Form2 = () => {
           errMess={nameValidated}
         />
         <IInput
+          value={secondName}
           type="secondName"
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             dispatch(setSecondName(event.target.value));
@@ -48,6 +49,7 @@ export const Form2 = () => {
           errMess={secondNameValidated}
         />
         <IInput
+          value={email}
           type="email"
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             dispatch(setEmail(event.target.value));
@@ -55,6 +57,7 @@ export const Form2 = () => {
           errMess={emailValidated}
         />
         <IInput
+          value={phone}
           type="phone"
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             dispatch(setPhone(event.target.value));
@@ -88,6 +91,6 @@ export const Form2 = () => {
           }}
         />
       </div>
-    </div>
+    </FormLayout>
   );
 };

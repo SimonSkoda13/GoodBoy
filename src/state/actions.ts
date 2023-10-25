@@ -13,9 +13,6 @@ export const setFormActions = {
     if (state.formNumber > 1) state.formNumber -= 1;
   },
 
-  setDone(state: FormData, action: PayloadAction<boolean>) {
-    state.done = action.payload;
-  },
   setOption: (state: FormData, action: PayloadAction<DonateType>) => {
     state.option = action.payload;
   },
