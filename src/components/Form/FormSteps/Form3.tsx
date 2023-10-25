@@ -1,6 +1,6 @@
 import { useFormDispatch, useFormSelector } from "@/app/page";
 import { Button } from "@/components/Button";
-import { prevFormNumber, setGdpr } from "@/state/reducers";
+import { nextFormNumber, prevFormNumber, setGdpr } from "@/state/reducers";
 import React from "react";
 import { FormLayout } from "../FormLayout";
 import { LabelAndValue } from "@/components/LabelAndValue";
@@ -55,7 +55,7 @@ export const Form3 = () => {
       </div>
       <div className="w-max flex flex-row">
         <div
-          className="w-7 h-7 mr-3 rounded-md border-[0.5px] overflow-hidden p-[5.2px] cursor-pointer"
+          className="w-7 h-7 mr-3 rounded-md border-[0.5px] border-opacity-50 overflow-hidden p-[5.2px] cursor-pointer"
           onClick={() => {
             dispatch(setGdpr(gdpr ? false : true));
           }}
@@ -95,8 +95,12 @@ export const Form3 = () => {
             ).then((response) => {
               if (response.ok) {
                 console.log("Successful ");
+                dispatch(nextFormNumber());
               } else {
                 console.log("Something went wrong");
+                alert(
+                  "Niečo neprebehlo ako malo, skúste znova alebo nás prosím kontaktujte"
+                );
               }
             });
           }}

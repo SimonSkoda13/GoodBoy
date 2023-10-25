@@ -41,7 +41,7 @@ export const IInput = (props: IInputProps) => {
   const { type, onChange, errMess, value } = props;
 
   return (
-    <div className="w-full py-2 px-6 m-0 rounded-md border-[0.5px] border-greyText hover:border-primary-900">
+    <div className="w-full py-2 px-6 m-0 rounded-md border-[0.5px] border-greyText border-opacity-50 hover:border-primary-900">
       <div className="flex flex-row items-end">
         <Label className="text-[0.9rem]">{displayData[type].label}</Label>
         {
