@@ -23,7 +23,7 @@ export const AmountSelector = (props: AmountSelectorProps) => {
     return (
       <div
         className={
-          "flex flex-row content-center items-center mx-2 p-4 bg-white text-dark border-[0.5px] border-dark hover:bg-primary-900 transition ease-in-out cursor-pointer rounded-md" +
+          "flex flex-row content-center items-center mx-2 p-4 bg-white text-dark border-[0.5px] border-greyText border-opacity-50 hover:bg-primary-900 transition ease-in-out cursor-pointer rounded-md" +
           (amount === formAmount
             ? "border-none bg-gradient-to-r from-primary-900 to-primary-800 rounded-md border-0"
             : "")
@@ -35,7 +35,7 @@ export const AmountSelector = (props: AmountSelectorProps) => {
     );
   }
   return (
-    <div className="flex flex-row content-center items-center mx-2 p-4 bg-white text-dark border-[0.5px] border-dark transition ease-in-out cursor-pointer rounded-md">
+    <div className="flex flex-row content-center items-center mx-2 p-4 bg-white text-dark border-[0.5px] border-greyText border-opacity-50 transition ease-in-out cursor-pointer rounded-md">
       <input
         className={
           "px-2 py-1 w-[4rem] focus:outline-none focus:ring focus:border-primary-900 font-800 font-medium leading-[138%] mr-2" +

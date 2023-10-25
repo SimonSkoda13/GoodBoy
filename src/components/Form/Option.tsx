@@ -8,7 +8,7 @@ export const Option = () => {
   const option = useFormSelector((state) => state.form.option);
 
   return (
-    <div className="flex flex-row w-full rounded-lg cursor-pointer font-bold">
+    <div className="flex flex-row w-full rounded-lg cursor-pointer font-bold text-sm md:text-xl">
       <div
         className={
           "flex flex-col content-between w-[50%] p-8 bg-primary-300 rounded-l-3xl border-solid border border-primary-900 " +

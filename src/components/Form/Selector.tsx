@@ -34,7 +34,7 @@ export const Selector = (props: SelectorProps) => {
       });
   }, []);
   return (
-    <div className="flex flex-col items-start w-full py-2 px-8 bg-white rounded-md transition-all ease-in-out relative border-[0.5px] border-greyText">
+    <div className="flex flex-col items-start w-full py-2 px-8 bg-white rounded-md transition-all ease-in-out relative border-[0.5px] border-greyText border-opacity-50">
       <label className="leading-[138%] text-black" htmlFor="button">
         {label}
       </label>
