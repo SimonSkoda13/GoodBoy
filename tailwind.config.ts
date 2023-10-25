@@ -16,6 +16,7 @@ const config: Config = {
       greyText: "#9F9F9F",
       white: "#FFFFFF",
       black: "#000000",
+      red: "#c73e3e",
     },
   },
   plugins: [],
