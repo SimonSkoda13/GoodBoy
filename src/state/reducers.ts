@@ -7,7 +7,6 @@ import { setFormActions } from "./actions";
 const initialState: FormData = {
   gdpr: false,
   formNumber: 1,
-  done: false,
 
   shelter: undefined,
   option: DonateType.one,
@@ -43,7 +42,6 @@ export const {
   setGdpr,
   nextFormNumber,
   prevFormNumber,
-  setDone,
 } = FormSlice.actions;
 
 export default FormSlice.reducer;
