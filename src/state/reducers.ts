@@ -10,7 +10,7 @@ const initialState: FormData = {
   done: false,
 
   shelter: undefined,
-  option: DonateType.specific,
+  option: DonateType.one,
   shelterList: [],
   amount: 50,
 
@@ -41,8 +41,8 @@ export const {
   setEmail,
   setPhone,
   setGdpr,
-  nextStep,
-  prevStep,
+  nextFormNumber,
+  prevFormNumber,
   setDone,
 } = FormSlice.actions;
 
