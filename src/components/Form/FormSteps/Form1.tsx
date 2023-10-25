@@ -6,6 +6,7 @@ import { Option } from "../Option";
 import { Selector } from "../Selector";
 import { useFormDispatch, useFormSelector } from "@/app/page";
 import { AmountSelector, AmountType } from "../AmountSelector";
+import { FormLayout } from "../FormLayout";
 
 export const Form1 = () => {
   const dispatch = useFormDispatch();
@@ -14,10 +15,7 @@ export const Form1 = () => {
   const shelter = useFormSelector((state) => state.form.shelter);
 
   return (
-    <div className="flex flex-col gap-11 overflow-auto font-800">
-      <h2 className="font-semibold text-3xl leading-tight md:text-5xl">
-        Vyberte si možnosť, ako chcete pomôcť
-      </h2>
+    <FormLayout heading="Vyberte si možnosť, ako chcete pomôcť">
       <Option />
       <div>
         <div className="flex flex-row mb-3">
@@ -59,12 +57,11 @@ export const Form1 = () => {
               (option === DonateType.one && shelter == undefined) || amount <= 0
             }
             onClick={() => {
-              console.log("clicked");
               dispatch(nextFormNumber());
             }}
           />
         </div>
       </div>
-    </div>
+    </FormLayout>
   );
 };

@@ -2,7 +2,6 @@ import { useFormSelector } from "@/app/page";
 
 export const FormNumber = () => {
   const number = useFormSelector((state) => state.form.formNumber);
-  console.log(number);
   let boxes: any[] = [];
 
   for (let i = 1; i < 4; i++) {

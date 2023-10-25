@@ -1,4 +1,4 @@
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, LegacyRef } from "react";
 import { Label } from "../Label";
 import ReactCountryFlag from "react-country-flag";
 import { useFormSelector } from "@/app/page";
@@ -32,12 +32,13 @@ export type IInputProps = {
   type: InputTypes;
   onChange: ChangeEventHandler<HTMLInputElement>;
   errMess?: string;
+  value?: string;
 };
 
 export const IInput = (props: IInputProps) => {
   const phone = useFormSelector((state) => state.form.phone);
 
-  const { type, onChange, errMess } = props;
+  const { type, onChange, errMess, value } = props;
 
   return (
     <div className="w-full py-2 px-6 m-0 rounded-md border-[0.5px] border-greyText hover:border-primary-900">
@@ -67,6 +68,7 @@ export const IInput = (props: IInputProps) => {
           type={displayData[type].type}
           placeholder={displayData[type].placeholder}
           onChange={onChange}
+          value={value}
         ></input>
       </div>
     </div>

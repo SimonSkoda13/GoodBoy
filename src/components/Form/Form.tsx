@@ -3,6 +3,7 @@ import { ReactNode, useEffect, useState } from "react";
 import { Form1 } from "./FormSteps/Form1";
 import { FormNumber } from "./FormNumber";
 import { Form2 } from "./FormSteps/Form2";
+import { Form3 } from "./FormSteps/Form3";
 
 export const Form = () => {
   const formValues = useFormSelector((state) => state.form);
@@ -16,6 +17,8 @@ export const Form = () => {
       case 2:
         setFormNode(<Form2 />);
         break;
+      case 3:
+        setFormNode(<Form3 />);
       default:
         break;
     }
