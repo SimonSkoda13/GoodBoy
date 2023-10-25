@@ -4,6 +4,7 @@ import { Form1 } from "./FormSteps/Form1";
 import { FormNumber } from "./FormNumber";
 import { Form2 } from "./FormSteps/Form2";
 import { Form3 } from "./FormSteps/Form3";
+import { Heading } from "../Heading";
 
 export const Form = () => {
   const formValues = useFormSelector((state) => state.form);
@@ -19,6 +20,10 @@ export const Form = () => {
         break;
       case 3:
         setFormNode(<Form3 />);
+        break;
+      case 4:
+        setFormNode(<Heading>Ďakujeme!</Heading>);
+        break;
       default:
         break;
     }
