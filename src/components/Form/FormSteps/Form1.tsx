@@ -15,12 +15,9 @@ export interface Form1Props {
 export const Form1 = (props: Form1Props) => {
   //   const { option, shelter } = props;
   const option = useFormSelector((state) => state.form.option);
+  const amount = useFormSelector((state) => state.form.amount);
   const shelter = useFormSelector((state) => state.form.shelter);
-  const formAmount = useFormSelector((state) => state.form.amount);
 
-  useEffect(() => {
-    console.log("option changed");
-  }, [option]);
   return (
     <form className="flex flex-col gap-11 overflow-auto">
       <h2 className="font-semibold text-3xl leading-tight md:text-5xl">
@@ -61,10 +58,12 @@ export const Form1 = (props: Form1Props) => {
           })}
           <AmountSelector type={AmountType.input} />
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-end mt-9 md:mt-11">
           <Button
             label="Pokračovať"
-            disabled={option === DonateType.one && shelter == undefined}
+            disabled={
+              option === DonateType.one && shelter == undefined && amount <= 0
+            }
             onClick={() => {
               nextFormNumber();
             }}

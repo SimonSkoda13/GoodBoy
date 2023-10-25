@@ -12,6 +12,7 @@ const config: Config = {
       "primary-800": "#C4794F",
       "primary-500": "#F3E2D9",
       "primary-300": "#FAF9F9",
+      dark: "#585757",
       greyText: "#9F9F9F",
       white: "#FFFFFF",
       black: "#000000",

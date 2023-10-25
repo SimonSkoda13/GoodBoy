@@ -11,7 +11,6 @@ export interface SelectorProps {
 export const Selector = (props: SelectorProps) => {
   const { label } = props;
   const dropButton = createRef<HTMLButtonElement>();
-  const setNewShelter = () => {};
   const [shelterList, setShelterList] =
     useState<{ id: number; name: string }[]>();
   const dispatch = useFormDispatch();
@@ -58,7 +57,7 @@ export const Selector = (props: SelectorProps) => {
         </svg> */}
       </button>
       <select
-        className="w-full font-medium leading-[138%] pt-[1rem] mt-[-1rem] border-none outline-none bg-[transparent] text-greyText appearance-none relative z-4"
+        className="w-full font-medium leading-[138%] pt-[1rem] mt-[-1rem] border-none outline-none bg-[transparent] text-greyText appearance-none relative z-4 cursor-pointer"
         onMouseDown={() =>
           dropButton.current?.classList.add("transform-[rotate(180deg)]")
         }
