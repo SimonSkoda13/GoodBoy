@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Public_Sans, Hind } from "next/font/google";
 import "./globals.css";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Good boy",
-  description: "PLease help some cute dogs",
-};
+const sans = Public_Sans({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -18,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sk">
-      <body className="min-h-screen flex flex-col text-black">
+      <body
+        className={sans.className + " min-h-screen flex flex-col text-black"}
+      >
         <Header />
         <div className="mx-[15%]">{children}</div>
         <div className="px-4 md:mx-[10%] flex mt-9">
@@ -29,3 +26,8 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Good boy",
+  description: "PLease help some cute dogs",
+};
