@@ -1,3 +1,4 @@
+import { hind } from "@/app/layout";
 import { Prosto_One } from "next/font/google";
 import React, { ReactNode } from "react";
 
@@ -7,7 +8,11 @@ interface HeadingProps {
 
 export const Heading = (props: HeadingProps) => {
   return (
-    <h2 className="font-semibold text-3xl leading-tight md:text-5xl">
+    <h2
+      className={
+        hind.className + " font-semibold text-3xl leading-tight md:text-5xl"
+      }
+    >
       {props.children}
     </h2>
   );

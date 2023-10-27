@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Public+Sans:400,600,300");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,5 +9,5 @@
 
 body {
   color: black;
-  background: white
+  background: white;
 }
