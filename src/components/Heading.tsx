@@ -1,6 +1,9 @@
-import { hind } from "@/app/layout";
-import { Prosto_One } from "next/font/google";
+import { Hind } from "next/font/google";
 import React, { ReactNode } from "react";
+export const hind = Hind({
+  weight: "600",
+  subsets: ["latin"],
+});
 
 interface HeadingProps {
   children: ReactNode;

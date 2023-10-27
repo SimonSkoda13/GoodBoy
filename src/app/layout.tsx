@@ -5,10 +5,6 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 
 const sans = Public_Sans({ subsets: ["latin"] });
-export const hind = Hind({
-  weight: "600",
-  subsets: ["latin"],
-});
 
 export default function RootLayout({
   children,
